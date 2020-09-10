@@ -1,0 +1,43 @@
+{
+    "tables": [
+        {
+            "table": "Acao",
+            "pk_field": "nome",
+            "field_list": {
+                "nome": "str",
+                "instituicao": "str",
+                "local": "str",
+                "descricao": "str"
+            }
+        },
+        {
+            "table": "Voluntario",
+            "pk_field": "id",
+            "field_list": {
+                "id": "int",
+                "inicio": "date"
+            },
+            "nested":{
+                "pessoa": "Pessoa",
+                "acao": "Acao"
+            }
+        },
+        {
+            "table": "Pessoa",
+            "pk_field": "nome",
+            "field_list": {
+                "nome": "str",
+                "sobrenome": "str",
+                "bairro": "str",
+                "cidade": "str"
+            }
+        }
+    ],
+    "db_type": "neo4j",
+    "db_config": {
+        "host": "localhost",
+        "port": 7687,
+        "user": "neo4j",
+        "password": "1234"
+    }
+}
