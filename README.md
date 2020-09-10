@@ -21,16 +21,16 @@ Supondo que você esteja rodando esta API **localmente**, as seguintes rotas est
 * `/docs` Traz a documentação _Swagger_ com todos os verbos REST disponíveis para a API e exemplos funcionais (Os verbos REST podem ser usados diretamente no browser, ou com algum programa como _POSTMAN_...)
 ![](./doc/Swagger.png)
 
-* `/Sales/Customer` Pode ser usado para trazer vários clientes (onde você pode passar uma query com os nomes dos campos, p.ex.: `...?name=CUSTOMERXYZ`)
+* `/Atados/Acao` Pode ser usado para trazer vários clientes (onde você pode passar uma query com os nomes dos campos, p.ex.: `...?nome=ACAOXYZ`)
     * você pode também passar um `.../<customer_id>`
     para operações que exigem um registro único (consulta por campo chave ou exclusão)
     * Em caso de **POST** ou **PUT** é preciso passar o JSON adequado no _body_ da requisição (o formato do JSON estará na documentação Swagger).
 
-* `/Sales/Product` Funciona igual _/Sales/Customer_ só que para **Produtos**.
+* `/Atados/Product` Funciona igual _/Atados/Customer_ só que para **Produtos**.
 
-* `/Sales/Order` Funciona igual _/Sales/Customer_ só que para **Pedidos**.
+* `/Atados/Order` Funciona igual _/Atados/Customer_ só que para **Pedidos**.
 
-* `/Sales/Item` Funciona igual _/Sales/Customer_ só que para **Itens de pedido**.
+* `/Atados/Item` Funciona igual _/Atados/Customer_ só que para **Itens de pedido**.
 
 ---
 
