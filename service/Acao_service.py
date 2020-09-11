@@ -17,7 +17,7 @@ class AcaoService:
             self.table = get_table(AcaoModel)
 
     def find(self, params, nome=None):
-        if nome:
+        if nome is not None:
             logging.info(f'Finding "{nome}" in Acao ...')
             found = self.table.find_one([nome])
         else:

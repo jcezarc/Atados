@@ -17,7 +17,7 @@ class PessoaService:
             self.table = get_table(PessoaModel)
 
     def find(self, params, nome=None):
-        if nome:
+        if nome is not None:
             logging.info(f'Finding "{nome}" in Pessoa ...')
             found = self.table.find_one([nome])
         else:

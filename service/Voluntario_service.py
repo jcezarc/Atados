@@ -17,7 +17,7 @@ class VoluntarioService:
             self.table = get_table(VoluntarioModel)
 
     def find(self, params, id=None):
-        if id:
+        if id is not None:
             logging.info(f'Finding "{id}" in Voluntario ...')
             found = self.table.find_one([id])
         else:

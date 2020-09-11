@@ -1,31 +1,31 @@
 import sys
 sys.path.append('..')
-from service.Voluntario_service import VoluntarioService
-from model.Voluntario_model import VoluntarioModel, PK_DEFAULT_VALUE
+from service.Pessoa_service import PessoaService
+from model.Pessoa_model import PessoaModel, PK_DEFAULT_VALUE
 from util.db.fake_table import FakeTable
 from util.messages import resp_ok, resp_not_found, GET_NOT_FOUND_MSG
 
 def test_find_success():
-    table = FakeTable(VoluntarioModel)
+    table = FakeTable(PessoaModel)
     record = table.default_values()
     table.insert(record)
-    service = VoluntarioService(table)
+    service = PessoaService(table)
     status_code = service.find(None, PK_DEFAULT_VALUE)[1]
     assert status_code == 200
 
 def test_find_failure():
-    service = VoluntarioService(FakeTable(VoluntarioModel))
-    message = service.find(None, PK_DEFAULT_VALUE)[0]
+    service = PessoaService(FakeTable(PessoaModel))
+    message = service.find(None, 999)[0]['status']
     assert message == GET_NOT_FOUND_MSG
 
 def test_insert_success():
-    table = FakeTable(VoluntarioModel)
-    service = VoluntarioService(table)
+    table = FakeTable(PessoaModel)
+    service = PessoaService(table)
     record = table.default_values()
     status_code = service.insert(record)[1]
     assert status_code == 201
 
 def test_insert_failure():
-    service = VoluntarioService(FakeTable(VoluntarioModel))
+    service = PessoaService(FakeTable(PessoaModel))
     status_code = service.insert({})[1]
     assert status_code == 400
