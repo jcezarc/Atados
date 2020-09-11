@@ -21,7 +21,7 @@ Supondo que você esteja rodando esta API **localmente**, as seguintes rotas est
 * `/docs` Traz a documentação _Swagger_ com todos os verbos REST disponíveis para a API e exemplos funcionais (Os verbos REST podem ser usados diretamente no browser, ou com algum programa como _POSTMAN_...)
 ![verbos REST](./doc/Swagger.png)
 
-* `/Atados/Acao` Pode ser usado para trazer vários clientes (onde você pode passar uma query com os nomes dos campos, p.ex.: `...?local=Salvador`)
+* `/Atados/Acao` Pode ser usado para trazer várias ações (onde você pode passar uma query com na url, p.ex.: `...?local=Salvador`)
     * você pode também passar um `.../<nome>`
     para operações que exigem um registro único (consulta por campo chave ou exclusão)
     * Em caso de **POST** ou **PUT** é preciso passar o JSON adequado no _body_ da requisição (o formato do JSON estará na documentação Swagger).
